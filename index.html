@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sewa Homestay Idaman</title>
+    
+    <!-- SKRIP ADSENSE ANDA -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1164829993190598"
+         crossorigin="anonymous"></script>
+
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
+        body { background-color: #f4f7f6; color: #333; line-height: 1.6; }
+        header { background: linear-gradient(135deg, #2c7a7b, #1a4d4a); color: white; text-align: center; padding: 2rem 1rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        header h1 { font-size: 2.2rem; margin-bottom: 0.5rem; }
+        .container { max-width: 1000px; margin: 2rem auto; padding: 0 1rem; }
+        .ads-container { background: #ffffff; padding: 15px; text-align: center; margin: 1.5rem auto; border: 1px dashed #cbd5e0; border-radius: 8px; max-width: 1000px; }
+        .ads-label { font-size: 10px; color: #a0aec0; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; }
+        .homestay-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 3rem; }
+        .card { background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: transform 0.3s; }
+        .card:hover { transform: translateY(-5px); }
+        .card-img { background-color: #cbd5e0; height: 180px; display: flex; align-items: center; justify-content: center; color: #718096; font-weight: bold; font-size: 1.2rem; }
+        .card-content { padding: 1.5rem; }
+        .card-content h3 { color: #2c7a7b; margin-bottom: 0.5rem; }
+        .price { color: #e53e3e; font-weight: bold; margin-top: 0.5rem; }
+        .booking-section { background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); max-width: 600px; margin: 0 auto 2rem auto; }
+        .booking-section h2 { color: #1a4d4a; margin-bottom: 1.5rem; text-align: center; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem; }
+        .form-group { margin-bottom: 1.2rem; }
+        .form-group label { display: block; margin-bottom: 0.5rem; font-weight: 600; color: #4a5568; }
+        .form-group input, .form-group select { width: 100%; padding: 0.75rem; border: 1px solid #cbd5e0; border-radius: 5px; font-size: 1rem; background-color: #fff; }
+        .btn-submit { display: block; width: 100%; padding: 1rem; background-color: #2c7a7b; color: white; border: none; border-radius: 5px; font-size: 1.1rem; font-weight: bold; cursor: pointer; transition: background 0.2s; margin-top: 1.5rem; text-align: center; text-decoration: none; }
+        .btn-submit:hover { background-color: #1a4d4a; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🏡 Homestay Impian Enterprise</h1>
+        <p>Keselesaan Anda, Keutamaan Kami</p>
+    </header>
+
+    <div class="container">
+        <!-- 📢 SLOT IKLAN 1 -->
+        <div class="ads-container">
+            <div class="ads-label">Iklan Digital</div>
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-1164829993190598"
+                 data-ad-slot="8178841094" 
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+        
+        <div class="homestay-grid">
+            <div class="card">
+                <div class="card-img">🏞️ Homestay Kampung</div>
+                <div class="card-content">
+                    <h3>Homestay Desa Indah</h3>
+                    <p>Suasana kampung yang tenang, berdekatan sawah padi. Sesuai untuk keluarga kecil.</p>
+                    <p class="price">RM 150 / Malam</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img">🏊 Homestay Kolam</div>
+                <div class="card-content">
+                    <h3>Villa Pool View</h3>
+                    <p>Mempunyai kolam renang peribadi, reka bentuk moden, dan 4 bilik tidur yang luas.</p>
+                    <p class="price">RM 350 / Malam</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img">🏙️ Homestay Bandar</div>
+                <div class="card-content">
+                    <h3>Condo Suite Premium</h3>
+                    <p>Terletak di pusat bandar, pemandangan indah waktu malam, akses mudah ke mall.</p>
+                    <p class="price">RM 220 / Malam</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="booking-section">
+            <h2>Borang Tempahan Mudah</h2>
+            <form id="bookingForm" onsubmit="hantarKeWhatsApp(event)">
+                <div class="form-group">
+                    <label for="nama">Nama Penuh:</label>
+                    <input type="text" id="nama" placeholder="Masukkan nama anda" required>
+                </div>
+                <div class="form-group">
+                    <label for="telefon">Nombor Telefon Anda:</label>
+                    <input type="tel" id="telefon" placeholder="Contoh: 0123456789" required>
+                </div>
+                <div class="form-group">
+                    <label for="rumah">Pilih Homestay:</label>
+                    <select id="rumah" required>
+                        <option value="">-- Sila Pilih --</option>
+                        <option value="Homestay Desa Indah">Homestay Desa Indah (RM 150)</option>
+                        <option value="Villa Pool View">Villa Pool View (RM 350)</option>
+                        <option value="Condo Suite Premium">Condo Suite Premium (RM 220)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="tarikh">Tarikh Daftar Masuk (Check-in):</label>
+                    <input type="date" id="tarikh" required>
+                </div>
+                <div class="form-group">
+                    <label for="bayaran">Kaedah Pembayaran:</label>
+                    <select id="bayaran" required>
+                        <option value="">-- Pilih Cara Bayaran --</option>
+                        <option value="Pindahan Bank Manual">Pindahan Bank Manual (Resit / CDM)</option>
+                        <option value="DuitNow / QR">DuitNow QR / E-Wallet</option>
+                        <option value="FPX Online Banking">FPX Perbankan Internet</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-submit">Sahkan Tempahan via WhatsApp</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Set tarikh minimum hari ini
+        const hariIni = new Date();
+        const tahun = hariIni.getFullYear();
+        const bulan = String(hariIni.getMonth() + 1).padStart(2, '0');
+        const hari = String(hariIni.getDate()).padStart(2, '0');
+        document.getElementById('tarikh').min = `${tahun}-${bulan}-${hari}`;
+
+        // Fungsi memproses borang terus ke WhatsApp anda
+        function hantarKeWhatsApp(event) {
+            event.preventDefault();
+
+            // GANTIKAN NOMBOR DI BAWAH DENGAN NOMBOR WHATSAPP ADMIN HOMESTAY ANDA (Mesti mula dengan 60)
+            const noAdmin = "60177241468"; 
+
+            const nama = document.getElementById('nama').value;
+            const telefon = document.getElementById('telefon').value;
+            const rumah = document.getElementById('rumah').value;
+            const tarikh = document.getElementById('tarikh').value;
+            const bayaran = document.getElementById('bayaran').value;
+
+            // Menyusun teks mesej yang kemas
+            const teksMesej = `🔔 *TEMPAHAN HOMESTAY BARU* %0A%0A` +
+                              `👤 *Nama:* ${nama}%0A` +
+                              `📞 *No. Telefon Pelanggan:* ${telefon}%0A` +
+                              `🏡 *Pilihan:* ${rumah}%0A` +
+                              `📅 *Tarikh Check-In:* ${tarikh}%0A` +
+                              `💰 *Cara Bayaran:* ${bayaran}`;
+
+            // Membuka URL WhatsApp secara automatik
+            const urlWhatsApp = `https://wa.me/${noAdmin}?text=${teksMesej}`;
+            window.open(urlWhatsApp, '_blank');
+        }
+    </script>
+</body>
+</html>
