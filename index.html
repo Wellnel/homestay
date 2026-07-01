@@ -15,8 +15,18 @@
         header { background: linear-gradient(135deg, #2c7a7b, #1a4d4a); color: white; text-align: center; padding: 2rem 1rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
         header h1 { font-size: 2.2rem; margin-bottom: 0.5rem; }
         .container { max-width: 1000px; margin: 2rem auto; padding: 0 1rem; }
-        .ads-container { background: #ffffff; padding: 15px; text-align: center; margin: 1.5rem auto; border: 1px dashed #cbd5e0; border-radius: 8px; max-width: 1000px; }
+        
+        /* Susunan Atas untuk Isyarat Trading, Iklan, dan Info Kemudahan */
+        .top-widgets-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .ads-container { background: #ffffff; padding: 15px; text-align: center; border: 1px dashed #cbd5e0; border-radius: 8px; width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
         .ads-label { font-size: 10px; color: #a0aec0; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; }
+        
         .homestay-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 3rem; }
         .card { background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: transform 0.3s; }
         .card:hover { transform: translateY(-5px); }
@@ -24,6 +34,7 @@
         .card-content { padding: 1.5rem; }
         .card-content h3 { color: #2c7a7b; margin-bottom: 0.5rem; }
         .price { color: #e53e3e; font-weight: bold; margin-top: 0.5rem; }
+        
         .booking-section { background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); max-width: 600px; margin: 0 auto 2rem auto; }
         .booking-section h2 { color: #1a4d4a; margin-bottom: 1.5rem; text-align: center; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem; }
         .form-group { margin-bottom: 1.2rem; }
@@ -31,6 +42,53 @@
         .form-group input, .form-group select { width: 100%; padding: 0.75rem; border: 1px solid #cbd5e0; border-radius: 5px; font-size: 1rem; background-color: #fff; }
         .btn-submit { display: block; width: 100%; padding: 1rem; background-color: #2c7a7b; color: white; border: none; border-radius: 5px; font-size: 1.1rem; font-weight: bold; cursor: pointer; transition: background 0.2s; margin-top: 1.5rem; text-align: center; text-decoration: none; }
         .btn-submit:hover { background-color: #1a4d4a; }
+
+        /* Gaya Isyarat Gold */
+        .signal-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            width: 100%;
+            border: 1px solid #e2e8f0;
+            font-family: Arial, sans-serif;
+        }
+        .signal-card h3 {
+            margin: 0 0 15px 0;
+            color: #1a5f7a;
+            font-size: 16px;
+        }
+        #gold-price {
+            font-size: 28px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .signal-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 16px;
+            background: #e0e0e0;
+            color: #666;
+        }
+        /* Warna Dinamik Mengikut Isyarat */
+        .buy-signal { background: #2ecc71; color: white; }
+        .sell-signal { background: #e74c3c; color: white; }
+        .neutral-signal { background: #f1c40f; color: #333; }
+
+        /* Gaya Kotak Info Kemudahan & Lokasi */
+        .homestay-info { 
+            width: 100%; 
+            font-family: Arial, sans-serif; 
+            padding: 20px; 
+            background: #ffffff; 
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
+        }
     </style>
 </head>
 <body>
@@ -40,59 +98,60 @@
     </header>
 
     <div class="container">
-        <!-- 📢 SLOT IKLAN 1 -->
-        <div class="ads-container">
-             <div class="signal-card">
-    <h3>📊 LIVE TRADING SIGNAL (XAUUSD)</h3>
-    <div id="gold-price">Memuatkan harga semasa...</div>
-    <div id="gold-signal" class="signal-badge">MEMUATKAN...</div>
-    <small>Data dikemas kini secara langsung via CoinGecko & Render API</small>
-</div>
+        
+        <!-- 📱 BAHAGIAN WIDGET ATAS (SIGNAL + ADSENSE + INFO) -->
+        <div class="top-widgets-grid">
+            
+            <!-- WIDGET 1: LIVE TRADING SIGNAL (XAUUSD) -->
+            <div class="signal-card">
+                <h3>📊 LIVE TRADING SIGNAL (XAUUSD)</h3>
+                <div id="gold-price">Memuatkan harga semasa...</div>
+                <div id="gold-signal" class="signal-badge">MEMUATKAN...</div>
+                <div style="margin-top: 10px;"><small style="color: #718096;">Data dikemas kini secara langsung via CoinGecko & Render API</small></div>
+            </div>
 
-<style>
-.signal-card {
-    background: #ffffff;
-    border-radius: 12px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    margin: 20px auto;
-    max-width: 400px;
-    font-family: Arial, sans-serif;
-}
-.signal-card h3 {
-    margin-0 0 15px 0;
-    color: #1a5f7a;
-    font-size: 16px;
-}
-#gold-price {
-    font-size: 28px;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 10px;
-}
-.signal-badge {
-    display: inline-block;
-    padding: 8px 20px;
-    border-radius: 20px;
-    font-weight: bold;
-    font-size: 16px;
-    background: #e0e0e0;
-    color: #666;
-}
-/* Warna Dinamik Mengikut Isyarat */
-.buy-signal { background: #2ecc71; color: white; }
-.sell-signal { background: #e74c3c; color: white; }
-.neutral-signal { background: #f1c40f; color: #333; }
-</style>
+            <!-- WIDGET 2: BAHAGIAN KEMUDAHAN & LOKASI -->
+            <div class="homestay-info">
+                <h4 style="color: #1a5f7a; border-bottom: 2px solid #1a5f7a; padding-bottom: 5px;">🏡 Kemudahan Yang Disediakan</h4>
+                <ul style="padding-left: 20px; color: #555; line-height: 1.6; margin-top: 10px;">
+                    <li>Bilik tidur berhawa dingin (Aircond)</li>
+                    <li>Televisyen & Akses Wi-Fi Percuma</li>
+                    <li>Dapur memasak & Peti sejuk</li>
+                    <li>Ruang meletak kenderaan yang luas</li>
+                </ul>
+
+                <h4 style="color: #1a5f7a; border-bottom: 2px solid #1a5f7a; padding-bottom: 5px; margin-top: 20px;">📍 Lokasi Kami</h4>
+                <p style="color: #555; line-height: 1.6; margin-top: 10px;">
+                    <strong>Alamat:</strong> Kampung Goshen jalan Lotong, 89100 Kota Marudu, Sabah, Malaysia.
+                </p>
+                <p style="font-size: 13px; color: #888; margin-top: 5px;">
+                    <em>(Berdekatan dengan kawasan yang tenang dan hanya 10 minit dari pusat bandar).</em>
+                </p>
+            </div>
+
+            <!-- WIDGET 3: SLOT IKLAN GOOGLE ADSENSE MOBILE -->
+            <div class="ads-container">
+                <div class="ads-label">Iklan / Advertisement</div>
+                <ins class="adsbygoogle"
+                     style="display:block; min-width:300px; min-height:250px;"
+                     data-client="ca-pub-1164829993190598"
+                     data-ad-slot="4291566975" 
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+
         </div>
         
+        <!-- GRID HOMESTAY -->
         <div class="homestay-grid">
             <div class="card">
                 <div class="card-img">🏞️ Homestay Kampung</div>
                 <div class="card-content">
-                    <h3>Homestay Desa Indah</h3>
-                    <p>Suasana kampung yang tenang, berdekatan sawah padi. Sesuai untuk keluarga kecil.</p>
+                    <h3>Homestay Goshen</h3>
+                    <p>Suasana kampung yang tenang, Sesuai untuk keluarga kecil.</p>
                     <p class="price">RM 150 / Malam</p>
                 </div>
             </div>
@@ -101,7 +160,7 @@
                 <div class="card-content">
                     <h3>Villa Pool View</h3>
                     <p>Mempunyai kolam renang peribadi, reka bentuk moden, dan 4 bilik tidur yang luas.</p>
-                    <p class="price">RM 350 / Malam</p>
+                    <p class="price">RM 350 / Malam(Penuh)</p>
                 </div>
             </div>
             <div class="card">
@@ -109,11 +168,12 @@
                 <div class="card-content">
                     <h3>Condo Suite Premium</h3>
                     <p>Terletak di pusat bandar, pemandangan indah waktu malam, akses mudah ke mall.</p>
-                    <p class="price">RM 220 / Malam</p>
+                    <p class="price">RM 220 / Malam(Penuh)</p>
                 </div>
             </div>
         </div>
 
+        <!-- BORANG TEMPAHAN -->
         <div class="booking-section">
             <h2>Borang Tempahan Mudah</h2>
             <form id="bookingForm" onsubmit="hantarKeWhatsApp(event)">
@@ -152,19 +212,16 @@
         </div>
     </div>
 
+    <!-- SKRIP LOGIK WHATSAPP & TARIKH -->
     <script>
-        // Set tarikh minimum hari ini
         const hariIni = new Date();
         const tahun = hariIni.getFullYear();
         const bulan = String(hariIni.getMonth() + 1).padStart(2, '0');
         const hari = String(hariIni.getDate()).padStart(2, '0');
         document.getElementById('tarikh').min = `${tahun}-${bulan}-${hari}`;
 
-        // Fungsi memproses borang terus ke WhatsApp anda
         function hantarKeWhatsApp(event) {
             event.preventDefault();
-
-            // GANTIKAN NOMBOR DI BAWAH DENGAN NOMBOR WHATSAPP ADMIN HOMESTAY ANDA (Mesti mula dengan 60)
             const noAdmin = "60177241468"; 
 
             const nama = document.getElementById('nama').value;
@@ -173,7 +230,6 @@
             const tarikh = document.getElementById('tarikh').value;
             const bayaran = document.getElementById('bayaran').value;
 
-            // Menyusun teks mesej yang kemas
             const teksMesej = `🔔 *TEMPAHAN HOMESTAY BARU* %0A%0A` +
                               `👤 *Nama:* ${nama}%0A` +
                               `📞 *No. Telefon Pelanggan:* ${telefon}%0A` +
@@ -181,46 +237,42 @@
                               `📅 *Tarikh Check-In:* ${tarikh}%0A` +
                               `💰 *Cara Bayaran:* ${bayaran}`;
 
-            // Membuka URL WhatsApp secara automatik
             const urlWhatsApp = `https://wa.me/${noAdmin}?text=${teksMesej}`;
             window.open(urlWhatsApp, '_blank');
         }
     </script>
-          <script>
-async function kemaskiniSignalGold() {
-    const priceEl = document.getElementById('gold-price');
-    const signalEl = document.getElementById('gold-signal');
 
-    try {
-        // Memanggil endpoint backend Render anda yang sudah aktif
-        const respon = await fetch('https://trading-signal-heartbeat.onrender.com/signal');
-        const data = await respon.json();
+    <!-- SKRIP HARGA EMAS -->
+    <script>
+        async function kemaskiniSignalGold() {
+            const priceEl = document.getElementById('gold-price');
+            const signalEl = document.getElementById('gold-signal');
 
-        // 1. Paparkan Harga Emas Semasa
-        priceEl.innerHTML = `$${data.current_price.toLocaleString(undefined, {minimumFractionDigits: 2})}`;
+            try {
+                const respon = await fetch('https://trading-signal-heartbeat.onrender.com/signal');
+                const data = await respon.json();
 
-        // 2. Paparkan Isyarat & Tukar Warna Latar Belakang Kotak Dinamik
-        signalEl.innerHTML = data.signal;
-        signalEl.className = 'signal-badge'; // Reset class asal
+                priceEl.innerHTML = `$${data.current_price.toLocaleString(undefined, {minimumFractionDigits: 2})}`;
+                signalEl.innerHTML = data.signal;
+                signalEl.className = 'signal-badge'; 
 
-        if (data.signal.includes('BUY')) {
-            signalEl.classList.add('buy-signal');
-        } else if (data.signal.includes('SELL')) {
-            signalEl.classList.add('sell-signal');
-        } else {
-            signalEl.classList.add('neutral-signal');
+                if (data.signal.includes('BUY')) {
+                    signalEl.classList.add('buy-signal');
+                } else if (data.signal.includes('SELL')) {
+                    signalEl.classList.add('sell-signal');
+                } else {
+                    signalEl.classList.add('neutral-signal');
+                }
+
+            } catch (ralat) {
+                console.error("Gagal mengambil data:", ralat);
+                priceEl.innerHTML = "$2,350.00";
+                signalEl.innerHTML = "NEUTRAL ⚖️ (Offline Mode)";
+                signalEl.className = 'signal-badge neutral-signal';
+            }
         }
 
-    } catch (ralat) {
-        console.error("Gagal mengambil data:", ralat);
-        priceEl.innerHTML = "$2,350.00";
-        signalEl.innerHTML = "NEUTRAL ⚖️ (Offline Mode)";
-        signalEl.className = 'signal-badge neutral-signal';
-    }
-}
-
-// Jalankan fungsi ini sebaik sahaja halaman selesai dimuatkan
-window.addEventListener('DOMContentLoaded', kemaskiniSignalGold);
-</script>
+        window.addEventListener('DOMContentLoaded', kemaskiniSignalGold);
+    </script>
 </body>
 </html>
