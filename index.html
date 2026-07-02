@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sewa Homestay Idaman</title>
     
-    <!-- SKRIP ADSENSE ANDA -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1164829993190598"
          crossorigin="anonymous"></script>
 
@@ -53,6 +52,17 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             border: 1px solid #e2e8f0;
         }
+
+        /* GAYA FOOTER HAK CIPTA BAHAW */
+        footer {
+            text-align: center;
+            padding: 1.5rem 1rem;
+            background-color: #ffffff;
+            color: #718096;
+            font-size: 14px;
+            border-top: 1px solid #e2e8f0;
+            margin-top: 2rem;
+        }
     </style>
 </head>
 <body>
@@ -63,10 +73,8 @@
 
     <div class="container">
         
-        <!-- 📱 BAHAGIAN WIDGET ATAS (ADSENSE + INFO) -->
         <div class="top-widgets-grid">
             
-            <!-- WIDGET 1: BAHAGIAN KEMUDAHAN & LOKASI -->
             <div class="homestay-info">
                 <h4 style="color: #1a5f7a; border-bottom: 2px solid #1a5f7a; padding-bottom: 5px;">🏡 Kemudahan Yang Disediakan</h4>
                 <ul style="padding-left: 20px; color: #555; line-height: 1.6; margin-top: 10px;">
@@ -85,7 +93,6 @@
                 </p>
             </div>
 
-            <!-- WIDGET 2: SLOT IKLAN GOOGLE ADSENSE MOBILE -->
             <div class="ads-container">
                 <div class="ads-label">Iklan / Advertisement</div>
                 <ins class="adsbygoogle"
@@ -101,7 +108,6 @@
 
         </div>
         
-        <!-- GRID HOMESTAY -->
         <div class="homestay-grid">
             <div class="card">
                 <div class="card-img">🏞️ Homestay Kampung</div>
@@ -129,7 +135,6 @@
             </div>
         </div>
 
-        <!-- BORANG TEMPAHAN -->
         <div class="booking-section">
             <h2>Borang Tempahan Mudah</h2>
             <form id="bookingForm" onsubmit="hantarKeWhatsApp(event)">
@@ -168,7 +173,6 @@
         </div>
     </div>
 
-    <!-- SKRIP LOGIK WHATSAPP & TARIKH -->
     <script>
         const hariIni = new Date();
         const tahun = hariIni.getFullYear();
@@ -197,5 +201,9 @@
             window.open(urlWhatsApp, '_blank');
         }
     </script>
+
+    <footer>
+        <p>&copy; 2026 Homestay Impian Enterprise. Hak Cipta Terpelihara.</p>
+    </footer>
 </body>
 </html>
