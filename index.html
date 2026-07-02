@@ -16,7 +16,7 @@
         header h1 { font-size: 2.2rem; margin-bottom: 0.5rem; }
         .container { max-width: 1000px; margin: 2rem auto; padding: 0 1rem; }
         
-        /* Susunan Atas untuk Isyarat Trading, Iklan, dan Info Kemudahan */
+        /* Susunan Atas untuk Iklan, dan Info Kemudahan */
         .top-widgets-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -43,42 +43,6 @@
         .btn-submit { display: block; width: 100%; padding: 1rem; background-color: #2c7a7b; color: white; border: none; border-radius: 5px; font-size: 1.1rem; font-weight: bold; cursor: pointer; transition: background 0.2s; margin-top: 1.5rem; text-align: center; text-decoration: none; }
         .btn-submit:hover { background-color: #1a4d4a; }
 
-        /* Gaya Isyarat Gold */
-        .signal-card {
-            background: #ffffff;
-            border-radius: 12px;
-            padding: 20px;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            width: 100%;
-            border: 1px solid #e2e8f0;
-            font-family: Arial, sans-serif;
-        }
-        .signal-card h3 {
-            margin: 0 0 15px 0;
-            color: #1a5f7a;
-            font-size: 16px;
-        }
-        #gold-price {
-            font-size: 28px;
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 10px;
-        }
-        .signal-badge {
-            display: inline-block;
-            padding: 8px 20px;
-            border-radius: 20px;
-            font-weight: bold;
-            font-size: 16px;
-            background: #e0e0e0;
-            color: #666;
-        }
-        /* Warna Dinamik Mengikut Isyarat */
-        .buy-signal { background: #2ecc71; color: white; }
-        .sell-signal { background: #e74c3c; color: white; }
-        .neutral-signal { background: #f1c40f; color: #333; }
-
         /* Gaya Kotak Info Kemudahan & Lokasi */
         .homestay-info { 
             width: 100%; 
@@ -99,18 +63,10 @@
 
     <div class="container">
         
-        <!-- 📱 BAHAGIAN WIDGET ATAS (SIGNAL + ADSENSE + INFO) -->
+        <!-- 📱 BAHAGIAN WIDGET ATAS (ADSENSE + INFO) -->
         <div class="top-widgets-grid">
             
-            <!-- WIDGET 1: LIVE TRADING SIGNAL (XAUUSD) -->
-            <div class="signal-card">
-                <h3>📊 LIVE TRADING SIGNAL (XAUUSD)</h3>
-                <div id="gold-price">Memuatkan harga semasa...</div>
-                <div id="gold-signal" class="signal-badge">MEMUATKAN...</div>
-                <div style="margin-top: 10px;"><small style="color: #718096;">Data dikemas kini secara langsung via CoinGecko & Render API</small></div>
-            </div>
-
-            <!-- WIDGET 2: BAHAGIAN KEMUDAHAN & LOKASI -->
+            <!-- WIDGET 1: BAHAGIAN KEMUDAHAN & LOKASI -->
             <div class="homestay-info">
                 <h4 style="color: #1a5f7a; border-bottom: 2px solid #1a5f7a; padding-bottom: 5px;">🏡 Kemudahan Yang Disediakan</h4>
                 <ul style="padding-left: 20px; color: #555; line-height: 1.6; margin-top: 10px;">
@@ -129,7 +85,7 @@
                 </p>
             </div>
 
-            <!-- WIDGET 3: SLOT IKLAN GOOGLE ADSENSE MOBILE -->
+            <!-- WIDGET 2: SLOT IKLAN GOOGLE ADSENSE MOBILE -->
             <div class="ads-container">
                 <div class="ads-label">Iklan / Advertisement</div>
                 <ins class="adsbygoogle"
@@ -240,39 +196,6 @@
             const urlWhatsApp = `https://wa.me/${noAdmin}?text=${teksMesej}`;
             window.open(urlWhatsApp, '_blank');
         }
-    </script>
-
-    <!-- SKRIP HARGA EMAS -->
-    <script>
-        async function kemaskiniSignalGold() {
-            const priceEl = document.getElementById('gold-price');
-            const signalEl = document.getElementById('gold-signal');
-
-            try {
-                const respon = await fetch('https://trading-signal-heartbeat.onrender.com/signal');
-                const data = await respon.json();
-
-                priceEl.innerHTML = `$${data.current_price.toLocaleString(undefined, {minimumFractionDigits: 2})}`;
-                signalEl.innerHTML = data.signal;
-                signalEl.className = 'signal-badge'; 
-
-                if (data.signal.includes('BUY')) {
-                    signalEl.classList.add('buy-signal');
-                } else if (data.signal.includes('SELL')) {
-                    signalEl.classList.add('sell-signal');
-                } else {
-                    signalEl.classList.add('neutral-signal');
-                }
-
-            } catch (ralat) {
-                console.error("Gagal mengambil data:", ralat);
-                priceEl.innerHTML = "$2,350.00";
-                signalEl.innerHTML = "NEUTRAL ⚖️ (Offline Mode)";
-                signalEl.className = 'signal-badge neutral-signal';
-            }
-        }
-
-        window.addEventListener('DOMContentLoaded', kemaskiniSignalGold);
     </script>
 </body>
 </html>
